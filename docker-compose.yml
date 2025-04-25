@@ -1,0 +1,33 @@
+
+services:
+  ai-brain:
+    build: ./ai-brain
+    container_name: ai-brain
+    ports:
+      - "8000:8000"
+    volumes:
+      - ./ai-brain:/app
+    working_dir: /app
+    command: python ai_app.py
+    healthcheck:
+      test: [ "CMD", "curl", "-f", "http://localhost:8000/health" ]
+      interval: 5s
+      timeout: 3s
+      retries: 5
+
+
+  legacy-bot:
+    build: ./legacy-bot
+    container_name: legacy-bot
+    ports:
+      - "5000:5000"
+    volumes:
+      - ./legacy-bot:/app
+    working_dir: /app
+    command: python app.py
+    depends_on:
+      - ai-brain
+
+
+
+

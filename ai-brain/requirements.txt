@@ -1,0 +1,6 @@
+# ai-brain/requirements.txt
+flask
+langchain
+chromadb
+openai
+flasgger
