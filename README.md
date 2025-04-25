@@ -26,8 +26,8 @@ The **Legacy Bot** serves as the user-facing interface, while the **AI Brain** p
 1. Clone the repository:
 
     ```bash
-    git clone <your-repo-url>
-    cd <your-repo-folder>
+    git clone https://github.com/KriszgruberL/LegacyMind.git
+    cd LegacyMind
     ```
 
 2. Build the Docker containers:
